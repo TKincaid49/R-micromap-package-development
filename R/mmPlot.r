@@ -314,7 +314,9 @@ print.mm <- function(x, name=NULL, res=300, ...){
   if(!is.null(name)) recognized.print.type <- right(print.file,3) %in% right(c('.pdf','.tiff','.tif','.jpeg','.jpg','.png','.ps'),3)
 
   if(!recognized.print.type) {
-    if(.Platform$OS.type == "windows") options(device="windows")
+    if(.Platform$OS.type == "windows") {
+       options(device="windows")
+    }
     dev.new(width = plobject$plot.width, height = plobject$plot.height)
   }
 
